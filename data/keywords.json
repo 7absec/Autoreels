@@ -1,0 +1,87 @@
+{
+  "_source": "vidIQ keyword research (country IN) + YouTube autocomplete (hl=hi, gl=IN), 2026-10-18. Volumes are estimated monthly searches.",
+  "phrases": {
+    "default": [
+      "Funny Hindi Cartoon",
+      "Cartoon Comedy Video",
+      "Desi Comedy Cartoon",
+      "Funny Cartoon Video"
+    ],
+    "school": [
+      "School Comedy Cartoon",
+      "Indian School Funny Cartoon"
+    ],
+    "gali": [
+      "Desi Comedy Cartoon",
+      "Funny Hindi Cartoon"
+    ],
+    "kirana": [
+      "Funny Hindi Cartoon",
+      "Desi Comedy Cartoon"
+    ],
+    "tapri": [
+      "Cartoon Comedy Video",
+      "Funny Hindi Cartoon"
+    ],
+    "chhat": [
+      "Funny Hindi Cartoon",
+      "Cartoon Comedy Video"
+    ]
+  },
+  "seasons": {
+    "diwali": "Diwali Comedy Cartoon",
+    "dhanteras": "Diwali Comedy Cartoon",
+    "holi": "Holi Comedy Cartoon",
+    "rakhi": "Raksha Bandhan Comedy Cartoon",
+    "raksha bandhan": "Raksha Bandhan Comedy Cartoon",
+    "navratri": "Navratri Comedy Cartoon",
+    "dussehra": "Dussehra Comedy Cartoon",
+    "christmas": "Christmas Comedy Cartoon",
+    "new year": "New Year Comedy Cartoon",
+    "exam": "Exam Comedy Cartoon",
+    "result": "Exam Comedy Cartoon",
+    "cricket": "Cricket Comedy Cartoon",
+    "monsoon": "Monsoon Comedy Cartoon",
+    "baarish": "Monsoon Comedy Cartoon",
+    "baraat": "Shaadi Comedy Cartoon",
+    "shaadi": "Shaadi Comedy Cartoon"
+  },
+  "core_tags": [
+    "cartoon video",
+    "funny cartoon",
+    "hindi cartoon",
+    "cartoon comedy video",
+    "cartoon comedy",
+    "funny cartoon in hindi",
+    "cartoon in hindi",
+    "desi comedy",
+    "hindi kahani cartoon",
+    "funny comedy"
+  ],
+  "hindi_tags": [
+    "कार्टून कॉमेडी",
+    "कॉमेडी वीडियो",
+    "देसी कॉमेडी",
+    "हिंदी कार्टून"
+  ],
+  "volumes": {
+    "cartoon video": 770523,
+    "hindi kahani": 368361,
+    "funny cartoon": 204000,
+    "hindi cartoon": 183135,
+    "cartoon in hindi": 53078,
+    "funny comedy": 47489,
+    "hindi kahani cartoon": 15959,
+    "cartoon comedy video": 12697,
+    "funny cartoon in hindi": 4844,
+    "desi comedy": 4796,
+    "indian school funny": 4544,
+    "school comedy": 4146
+  },
+  "never": [
+    "kids video",
+    "funny cartoon for kids",
+    "nursery rhymes",
+    "kids entertainment"
+  ]
+}

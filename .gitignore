@@ -1,0 +1,25 @@
+# secrets: never commit
+.env
+client_secret.json
+token.json
+ig_token.json
+
+# generated at runtime
+output/
+cache/
+logs/
+community/
+inbox/*.json
+inbox/done/
+inbox/needs-review/
+data/state.json
+data/state.tmp
+data/community.json
+data/community.tmp
+data/learnings.json
+data/vidiq_cache.json
+data/tg_morning.txt
+data/paused
+__pycache__/
+*.pyc
+.claude/settings.local.json

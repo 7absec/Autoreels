@@ -1,0 +1,41 @@
+{
+  "pappu": {
+    "name": "Pappu",
+    "role": "The over-confident jugaadu. Always has a 'genius' plan, a shortcut or a business idea. Speaks fast, calls everyone 'bhai', ends up the butt of the joke.",
+    "catchphrase": "Bhai, jugaad hai na!",
+    "look": "tall, saffron gamcha around the neck, spiky hair, thin moustache",
+    "color": [255, 138, 0],
+    "scale": 1.0,
+    "eleven_voice": "7b9mYhmnp0y2qSH1FnBL",
+    "eleven_voice_name": "Bunty - Funny Best Friend",
+    "edge_voice": "hi-IN-MadhurNeural",
+    "edge_rate": "+8%",
+    "edge_pitch": "+0Hz"
+  },
+  "golu": {
+    "name": "Golu",
+    "role": "The gentle, innocent foodie with a round belly. Takes everything literally, gets hungry at the worst moment, believes every rumour. Slow, warm, lovable.",
+    "catchphrase": "Pehle samosa, phir baat.",
+    "look": "short and round, big belly, green topi, rosy cheeks",
+    "color": [46, 170, 92],
+    "scale": 0.92,
+    "eleven_voice": "4iqKdEXMW8NRF8USiS3Q",
+    "eleven_voice_name": "Bittu - Heavy Kid Cartoon Character",
+    "edge_voice": "hi-IN-MadhurNeural",
+    "edge_rate": "-6%",
+    "edge_pitch": "-14Hz"
+  },
+  "chhotu": {
+    "name": "Chhotu",
+    "role": "The small, razor-sharp boy who runs Raju's chai tapri. Sees through every plan, always delivers the final punchline, never loses his cool.",
+    "catchphrase": "Do cutting, aur ek dimaag.",
+    "look": "small, blue towel on the shoulder, headband, big eyes, carries a kettle",
+    "color": [38, 120, 230],
+    "scale": 0.74,
+    "eleven_voice": "srEfhy4AF67Mw9SpTVFd",
+    "eleven_voice_name": "Omar J - Very Young Storyteller",
+    "edge_voice": "hi-IN-MadhurNeural",
+    "edge_rate": "+14%",
+    "edge_pitch": "+28Hz"
+  }
+}

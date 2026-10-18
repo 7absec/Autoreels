@@ -1,0 +1,8 @@
+Fonts bundled with this project (all free to use and redistribute):
+
+- Bangers by Vernon Adams: SIL Open Font License 1.1 (https://openfontlicense.org), from Google Fonts.
+- Patrick Hand by Patrick Wagesreiter: SIL Open Font License 1.1, from Google Fonts.
+- Gloria Hallelujah by Kimberly Geswein: SIL Open Font License 1.1, from Google Fonts.
+- Permanent Marker by Font Diner: Apache License 2.0, from Google Fonts.
+- Noto Sans Devanagari by Google: SIL Open Font License 1.1.
+- DejaVu Sans by the DejaVu fonts team: Bitstream Vera / DejaVu licence (https://dejavu-fonts.github.io/License.html).

@@ -1,0 +1,323 @@
+{
+  "name": "Tapri Gang - Daily Episode",
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "nodes": [
+    {
+      "id": "465b2679-4957-42cf-b27f-7561213d5e95",
+      "name": "Daily 10:00",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.3,
+      "position": [
+        0,
+        176
+      ],
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "0 10 * * *"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "2a770d47-aaa5-4a04-a560-afab0635de80",
+      "name": "Config",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        224,
+        176
+      ],
+      "parameters": {
+        "mode": "manual",
+        "includeOtherFields": false,
+        "assignments": {
+          "assignments": [
+            {
+              "id": "api",
+              "name": "api",
+              "value": "https://YOUR-TUNNEL.trycloudflare.com",
+              "type": "string"
+            },
+            {
+              "id": "privacy",
+              "name": "privacy",
+              "value": "private",
+              "type": "string"
+            },
+            {
+              "id": "publish_at",
+              "name": "publish_at",
+              "value": "={{ $now.setZone(\"Asia/Kolkata\").set({ hour: 19, minute: 30, second: 0, millisecond: 0 }).toISO() }}",
+              "type": "string"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "1b2b22c7-963c-44a5-9883-2d7f09b7a5bc",
+      "name": "Make Episode",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [
+        448,
+        176
+      ],
+      "parameters": {
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpTemplatedCustomAuth",
+        "method": "POST",
+        "url": "={{ $(\"Config\").item.json.api }}/api/make",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{}"
+      }
+    },
+    {
+      "id": "bbfb67f9-5915-41fa-9045-7caf89ab0e5d",
+      "name": "Wait For Render",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        672,
+        176
+      ],
+      "parameters": {
+        "amount": 4,
+        "unit": "minutes"
+      }
+    },
+    {
+      "id": "160f6019-684d-42f6-975e-d0aaa7e1bb86",
+      "name": "Check Ticket",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [
+        896,
+        176
+      ],
+      "parameters": {
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpTemplatedCustomAuth",
+        "method": "GET",
+        "url": "={{ $(\"Config\").item.json.api }}/api/job?id={{ $(\"Make Episode\").item.json.ticket }}"
+      }
+    },
+    {
+      "id": "a97743da-cee0-433f-98a9-6a11b18f7e9a",
+      "name": "Video Ready?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1120,
+        96
+      ],
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "leftValue": "={{ $json.status }}",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              },
+              "rightValue": "done"
+            }
+          ],
+          "combinator": "and"
+        }
+      }
+    },
+    {
+      "id": "26bd6128-d9a0-4802-9196-78b87c5b7533",
+      "name": "Upload Scheduled",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [
+        1344,
+        0
+      ],
+      "parameters": {
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpTemplatedCustomAuth",
+        "method": "POST",
+        "url": "={{ $(\"Config\").item.json.api }}/api/approve",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ job_id: $json.job_id, privacy: $(\"Config\").item.json.privacy, publish_at: $(\"Config\").item.json.publish_at }) }}"
+      }
+    },
+    {
+      "id": "e41f0952-bb00-46d0-843b-288505ea8c1d",
+      "name": "Failed?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1344,
+        192
+      ],
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "leftValue": "={{ $json.status }}",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              },
+              "rightValue": "failed"
+            }
+          ],
+          "combinator": "and"
+        }
+      }
+    },
+    {
+      "id": "24d76ac7-3f01-4a4f-852c-716e61c3f993",
+      "name": "Stop: Render Failed",
+      "type": "n8n-nodes-base.stopAndError",
+      "typeVersion": 1,
+      "position": [
+        1568,
+        144
+      ],
+      "parameters": {
+        "errorMessage": "=Tapri Gang render failed: {{ $json.error }}"
+      }
+    },
+    {
+      "id": "a27f49f3-cd7e-402d-9e07-7852c28dcee2",
+      "name": "Wait 2 Min",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        1568,
+        368
+      ],
+      "parameters": {
+        "amount": 2,
+        "unit": "minutes"
+      }
+    }
+  ],
+  "connections": {
+    "Daily 10:00": {
+      "main": [
+        [
+          {
+            "node": "Config",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Config": {
+      "main": [
+        [
+          {
+            "node": "Make Episode",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Make Episode": {
+      "main": [
+        [
+          {
+            "node": "Wait For Render",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait For Render": {
+      "main": [
+        [
+          {
+            "node": "Check Ticket",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check Ticket": {
+      "main": [
+        [
+          {
+            "node": "Video Ready?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Video Ready?": {
+      "main": [
+        [
+          {
+            "node": "Upload Scheduled",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Failed?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Failed?": {
+      "main": [
+        [
+          {
+            "node": "Stop: Render Failed",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Wait 2 Min",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait 2 Min": {
+      "main": [
+        [
+          {
+            "node": "Check Ticket",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  }
+}

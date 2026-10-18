@@ -1,0 +1,88 @@
+{
+  "title": "Tapri Gang se milo: Pappu, Golu aur Chhotu | Channel Trailer",
+  "hook": "Milo Tapri Gang se!",
+  "location": "tapri",
+  "lines": [
+    {
+      "who": "chhotu",
+      "hi": "राजू की टपरी पे स्वागत है! मैं छोटू, यहाँ की चाय मेरे हाथ की।",
+      "caption": "Raju ki tapri pe swagat hai! Main Chhotu, yahan ki chai mere haath ki.",
+      "pose": "wave",
+      "face": "happy",
+      "prop": "kettle",
+      "fx": "none",
+      "react": "happy"
+    },
+    {
+      "who": "pappu",
+      "hi": "और मैं पप्पू! हर प्रॉब्लम का एक जुगाड़। भाई, जुगाड़ है ना!",
+      "caption": "Aur main Pappu! Har problem ka ek jugaad. Bhai, jugaad hai na!",
+      "pose": "point",
+      "face": "smug",
+      "prop": "none",
+      "fx": "idea",
+      "react": "confused"
+    },
+    {
+      "who": "golu",
+      "hi": "मैं गोलू। पहले समोसा, फिर बात।",
+      "caption": "Main Golu. Pehle samosa, phir baat.",
+      "pose": "show",
+      "face": "hungry",
+      "prop": "samosa",
+      "fx": "hearts",
+      "react": "laugh"
+    },
+    {
+      "who": "chhotu",
+      "hi": "और पप्पू भैया के हर जुगाड़ का हिसाब... मैं रखता हूँ।",
+      "caption": "Aur Pappu bhaiya ke har jugaad ka hisaab... main rakhta hoon.",
+      "pose": "hips",
+      "face": "smug",
+      "prop": "kettle",
+      "fx": "none",
+      "react": "shocked"
+    },
+    {
+      "who": "pappu",
+      "hi": "रोज़ तीन नए किस्से! टपरी, स्कूल, किराना, गली, छत... सब जगह!",
+      "caption": "Roz teen naye kisse! Tapri, school, kirana, gali, chhat... sab jagah!",
+      "pose": "cheer",
+      "face": "laugh",
+      "prop": "none",
+      "fx": "stars",
+      "react": "happy"
+    },
+    {
+      "who": "golu",
+      "hi": "सुबह सात, दोपहर बारह, शाम सात। एकदम नाश्ते, लंच और डिनर के टाइम पे!",
+      "caption": "Subah saat, dopahar baarah, shaam saat. Ekdum naashte, lunch aur dinner ke time pe!",
+      "pose": "talk",
+      "face": "happy",
+      "prop": "chai",
+      "fx": "none",
+      "react": "laugh"
+    },
+    {
+      "who": "chhotu",
+      "hi": "तो सब्सक्राइब करो... वरना चाय ठंडी हो जाएगी!",
+      "caption": "Toh subscribe karo... warna chai thandi ho jayegi!",
+      "pose": "point",
+      "face": "smug",
+      "prop": "kettle",
+      "fx": "laugh",
+      "react": "laugh"
+    }
+  ],
+  "description": "Tapri Gang mein aapka swagat hai! Pappu ka jugaad, Golu ki bhookh aur Chhotu ka dimaag: roz teen naye desi comedy Shorts.",
+  "tags": [
+    "tapri gang",
+    "channel trailer",
+    "desi comedy",
+    "cartoon comedy",
+    "hindi cartoon",
+    "stickman animation",
+    "pappu golu chhotu"
+  ],
+  "comment": "Tum teeno mein se kaun ho: Pappu, Golu ya Chhotu? Comment karo!"
+}
