@@ -1,4 +1,4 @@
-# Tapri Gang Factory
+# Autoreels
 
 **A faceless cartoon channel that runs itself.** Idea in, finished YouTube Short out: script, voices, animation, SEO, upload,
 Instagram Reel, comment replies, a daily community post and analytics, all from one PC, three times a day.
