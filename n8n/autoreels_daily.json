@@ -1,5 +1,5 @@
 {
-  "name": "Tapri Gang - Daily Episode",
+  "name": "Autoreels - Daily Episode",
   "settings": {
     "executionOrder": "v1"
   },
@@ -198,7 +198,7 @@
         144
       ],
       "parameters": {
-        "errorMessage": "=Tapri Gang render failed: {{ $json.error }}"
+        "errorMessage": "=Autoreels render failed: {{ $json.error }}"
       }
     },
     {

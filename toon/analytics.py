@@ -1,6 +1,6 @@
 """YouTube Analytics learning loop.
 
-Once a day the autopilot reads, for every Tapri Gang video that has been public for 2+ days (YouTube Analytics lags ~48 h):
+Once a day the autopilot reads, for every Autoreels video that has been public for 2+ days (YouTube Analytics lags ~48 h):
 views, average % viewed, likes, comments, shares, subscribers gained, and where the views came from (Shorts feed, search,
 browse...). It joins that with what the factory knows about each video (keyword phrase, location, who had the punchline,
 hook style) and writes data/learnings.json:

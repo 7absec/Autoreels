@@ -1,12 +1,12 @@
-# The example channel: Tapri Gang
+# The example channel: Autoreels
 
-This project was built for **Tapri Gang**, a Hindi desi stickman comedy. Everything here lives in `data/` and `branding/`;
+This project was built for **Autoreels**, a Hindi desi stickman comedy. Everything here lives in `data/` and `branding/`;
 replace it with your own channel (see "Make your own channel" in the README).
 
 | Field | Value |
 |---|---|
-| Name | Tapri Gang |
-| Handle | @taprigangcomedy (YouTube and Instagram) |
+| Name | Autoreels |
+| Handle | @yourchannel (YouTube and Instagram) |
 | Tagline | Ek cutting chai, teen dost, full masti |
 | Category | Comedy |
 | Language | Hindi voices, Hinglish titles and captions |

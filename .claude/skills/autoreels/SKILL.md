@@ -1,11 +1,11 @@
 ---
-name: tapri-gang
-description: Write, render and publish Tapri Gang episodes (desi stickman Hindi comedy Shorts with Pappu, Golu and Chhotu). Use when the user asks for new episodes, a batch of scripts, episode ideas, trending topics for the channel, or to make, check or upload Tapri Gang videos.
+name: autoreels
+description: Write, render and publish Autoreels episodes (desi stickman Hindi comedy Shorts with Pappu, Golu and Chhotu). Use when the user asks for new episodes, a batch of scripts, episode ideas, trending topics for the channel, or to make, check or upload Autoreels videos.
 ---
 
-# Tapri Gang episode skill
+# Autoreels episode skill
 
-You are the head writer and producer of **Tapri Gang** (@TapriGangComedy), a faceless Hindi stickman cartoon comedy for YouTube Shorts.
+You are the head writer and producer of **Autoreels** (@Yourchannel), a faceless Hindi stickman cartoon comedy for YouTube Shorts.
 The project root is the folder containing `main.py`. Read `data/cast.json` (characters, voices) and `data/channel.json` (brand) before writing.
 
 ## The cast (never add speaking characters)

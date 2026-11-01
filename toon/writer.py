@@ -54,7 +54,7 @@ def _cast_block() -> str:
 
 def system_prompt() -> str:
     ch = config.CHANNEL
-    return f"""You write episodes of "{ch.get('name', 'Tapri Gang')}", a desi stickman cartoon comedy for YouTube Shorts.
+    return f"""You write episodes of "{ch.get('name', 'Autoreels')}", a desi stickman cartoon comedy for YouTube Shorts.
 
 THE CAST (always these three, nobody else speaks):
 {_cast_block()}

@@ -1,4 +1,4 @@
-# Instagram Reels for Tapri Gang (@taprigangcomedy)
+# Instagram Reels for Autoreels (@yourchannel)
 
 Set `IG_MODE` in `.env`:
 - `phone`: the Reel and caption come to you on Telegram; you share it from your phone (20 seconds). Works today.
@@ -10,13 +10,13 @@ grid shows. `IG_THUMB_MS=0` picks the frame used as cover (milliseconds from the
 ## Automatic posting: the Meta Business route (about 20 minutes, once)
 
 ### 1. Instagram professional account linked to a Facebook Page
-1. Instagram app → @taprigangcomedy → Settings → **Account type and tools → Switch to professional account → Creator or Business**.
-2. Facebook: create a Page called **Tapri Gang** (facebook.com/pages/create). It can stay empty.
-3. **business.facebook.com** (Meta Business Suite) → Settings → **Instagram accounts → Connect** → log in as @taprigangcomedy,
-   and attach it to the Tapri Gang Page.
+1. Instagram app → @yourchannel → Settings → **Account type and tools → Switch to professional account → Creator or Business**.
+2. Facebook: create a Page called **Autoreels** (facebook.com/pages/create). It can stay empty.
+3. **business.facebook.com** (Meta Business Suite) → Settings → **Instagram accounts → Connect** → log in as @yourchannel,
+   and attach it to the Autoreels Page.
 
 ### 2. A Meta app
-1. **developers.facebook.com** → My Apps → **Create App** → use case **"Other"** → type **Business** → name "Tapri Gang Reels"
+1. **developers.facebook.com** → My Apps → **Create App** → use case **"Other"** → type **Business** → name "Autoreels Reels"
    → connect it to your business portfolio if asked.
 2. In the app dashboard, add the products **Instagram Graph API** (or "Instagram" → API setup with Facebook login) and **Facebook Login for Business**.
 3. App settings → Basic: copy the **App ID** and **App Secret**.
@@ -24,7 +24,7 @@ grid shows. `IG_THUMB_MS=0` picks the frame used as cover (milliseconds from the
 ### 3. A token (Graph API Explorer)
 1. developers.facebook.com/tools/explorer → choose your app (top right) → **User token**.
 2. Add these permissions: `instagram_basic`, `instagram_content_publish`, `pages_show_list`, `pages_read_engagement`, `business_management`.
-3. **Generate Access Token** → log in → choose the Tapri Gang Page and @taprigangcomedy → allow everything.
+3. **Generate Access Token** → log in → choose the Autoreels Page and @yourchannel → allow everything.
 4. Copy the token (it lasts about an hour; the next step turns it into a permanent one).
 
 ### 4. Connect (on this PC; secrets never go into a chat)
@@ -38,7 +38,7 @@ Save, then run:
 ```
 python main.py ig meta-setup
 ```
-It exchanges the token for a **Page token that does not expire**, finds @taprigangcomedy's account ID, saves `IG_LOGIN=facebook`,
+It exchanges the token for a **Page token that does not expire**, finds @yourchannel's account ID, saves `IG_LOGIN=facebook`,
 `IG_USER_ID`, `IG_TOKEN`, switches `IG_MODE=api`, and deletes `META_USER_TOKEN`.
 
 ### 5. Test

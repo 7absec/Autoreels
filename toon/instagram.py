@@ -1,4 +1,4 @@
-"""Instagram Reels: every Tapri Gang Short also goes to Instagram once it is live on YouTube.
+"""Instagram Reels: every Autoreels Short also goes to Instagram once it is live on YouTube.
 
 IG_MODE (in .env):
   off    nothing (default)
@@ -6,7 +6,7 @@ IG_MODE (in .env):
          from your phone (about 20 seconds). Needs Telegram only.
   api    published by itself through Instagram's own API (an Instagram professional account, a Meta app and a token:
          docs/INSTAGRAM.md, about 20 minutes once). The token is refreshed automatically every 30 days.
-Other settings: IG_HANDLE=@taprigang (in the caption), IG_MAX_PER_DAY=4.
+Other settings: IG_HANDLE=@autoreels (in the caption), IG_MAX_PER_DAY=4.
 (vidIQ can publish Reels only from a signed-in Claude chat, not from this unattended factory, so it is not used here.)
 
 `python main.py ig check` shows the state, `python main.py ig post <job>` posts one now.
@@ -19,7 +19,7 @@ import os
 from . import config, store
 
 log = logging.getLogger("toon.instagram")
-HASHTAGS = ["#desicomedy", "#hindicomedy", "#cartoon", "#funnyreels", "#comedyreels", "#indianfunny", "#taprigang", "#reels"]
+HASHTAGS = ["#desicomedy", "#hindicomedy", "#cartoon", "#funnyreels", "#comedyreels", "#indianfunny", "#autoreels", "#reels"]
 
 
 def mode() -> str:
@@ -31,7 +31,7 @@ def caption(jid: str) -> str:
     meta = json.loads((d / "meta.json").read_text(encoding="utf-8"))
     ep = json.loads((d / "episode.json").read_text(encoding="utf-8"))
     hook = (meta.get("seo") or {}).get("hook") or ep["title"]
-    handle = os.getenv("IG_HANDLE", "@taprigang").strip()
+    handle = os.getenv("IG_HANDLE", "@autoreels").strip()
     q = (ep.get("comment") or "Tumhare group mein Pappu kaun hai? Tag karo!").strip()
     text = "\n".join([hook.replace(" | Channel Trailer", ""), "", ep.get("description", ""), "", q, "",
                       f"Roz nayi desi comedy: follow {handle} 🫖", "", " ".join(HASHTAGS)])

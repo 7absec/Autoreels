@@ -87,7 +87,7 @@ class InstagramTests(unittest.TestCase):
         if not jid:
             self.skipTest("no rendered job on this machine")
         cap = instagram.caption(jid)
-        self.assertIn("#taprigang", cap)
+        self.assertIn("#autoreels", cap)
         self.assertLessEqual(len(cap), 2200)
 
     def test_off_does_nothing(self):

@@ -78,7 +78,7 @@ def call(tool: str, args: dict):
     try:
         if not _state["init"]:
             _post({"jsonrpc": "2.0", "id": 1, "method": "initialize", "params": {
-                "protocolVersion": "2025-03-26", "capabilities": {}, "clientInfo": {"name": "tapri-gang", "version": "1"}}})
+                "protocolVersion": "2025-03-26", "capabilities": {}, "clientInfo": {"name": "autoreels", "version": "1"}}})
             try:
                 _post({"jsonrpc": "2.0", "method": "notifications/initialized"})
             except Exception:

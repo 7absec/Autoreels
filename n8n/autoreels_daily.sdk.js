@@ -1,6 +1,6 @@
 import { workflow, node, trigger, ifElse, expr, sticky, newCredential } from '@n8n/workflow-sdk';
 
-const auth = { httpTemplatedCustomAuth: newCredential('Tapri Gang API') };
+const auth = { httpTemplatedCustomAuth: newCredential('Autoreels API') };
 const authParams = { authentication: 'genericCredentialType', genericAuthType: 'httpTemplatedCustomAuth' };
 
 const daily = trigger({
@@ -94,7 +94,7 @@ const waitMore = node({
 const stopFail = node({
   type: 'n8n-nodes-base.stopAndError',
   version: 1,
-  config: { name: 'Stop: Render Failed', parameters: { errorMessage: expr('Tapri Gang render failed: {{ $json.error }}') } }
+  config: { name: 'Stop: Render Failed', parameters: { errorMessage: expr('Autoreels render failed: {{ $json.error }}') } }
 });
 
 const approve = node({
@@ -114,9 +114,9 @@ const approve = node({
   }
 });
 
-const note = sticky('## Tapri Gang daily\nDrives the local factory API (python main.py api) through a Cloudflare tunnel.\n1. Credential "Tapri Gang API": headers template Authorization = Bearer {{api_key}}, api_key = FACTORY_API_TOKEN from .env.\n2. Set api (tunnel URL) in Config.\n3. Make Episode -> poll -> upload scheduled for 19:30 IST.\nKeep inactive until a manual test run works.', [daily, cfg, make], { color: 4 });
+const note = sticky('## Autoreels daily\nDrives the local factory API (python main.py api) through a Cloudflare tunnel.\n1. Credential "Autoreels API": headers template Authorization = Bearer {{api_key}}, api_key = FACTORY_API_TOKEN from .env.\n2. Set api (tunnel URL) in Config.\n3. Make Episode -> poll -> upload scheduled for 19:30 IST.\nKeep inactive until a manual test run works.', [daily, cfg, make], { color: 4 });
 
-export default workflow('tapri-gang-daily', 'Tapri Gang - Daily Episode')
+export default workflow('autoreels-daily', 'Autoreels - Daily Episode')
   .add(daily)
   .to(cfg)
   .to(make)

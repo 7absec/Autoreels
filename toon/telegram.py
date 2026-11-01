@@ -117,11 +117,11 @@ def send_post_kit(folder: Path):
 
 
 def morning_summary():
-    send(status_text(header="☀️ Good morning! Today on Tapri Gang:"))
+    send(status_text(header="☀️ Good morning! Today on Autoreels:"))
 
 
 # ======================================================================= commands
-def status_text(header: str = "📋 Tapri Gang status") -> str:
+def status_text(header: str = "📋 Autoreels status") -> str:
     from zoneinfo import ZoneInfo
     from . import store
     tz = ZoneInfo(config.TZ_NAME)
@@ -227,5 +227,5 @@ def setup() -> str:
     text = re.sub(r"^TELEGRAM_CHAT_ID=.*$", line, text, flags=re.M) if re.search(r"^TELEGRAM_CHAT_ID=", text, flags=re.M) else text + f"\n{line}\n"
     env.write_text(text, encoding="utf-8")
     os.environ["TELEGRAM_CHAT_ID"] = str(chat["id"])
-    send("🎉 Tapri Gang alerts are connected. Send /help for commands.")
+    send("🎉 Autoreels alerts are connected. Send /help for commands.")
     return f"Saved chat {chat.get('first_name', '')} ({chat['id']}). A test message was sent."

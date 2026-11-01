@@ -3,7 +3,7 @@
 **A faceless cartoon channel that runs itself.** Idea in, finished YouTube Short out: script, voices, animation, SEO, upload,
 Instagram Reel, comment replies, a daily community post and analytics, all from one PC, three times a day.
 
-Built for **[Tapri Gang](docs/CHANNEL.md)**, a Hindi desi stickman comedy with three friends at a chai tapri, and made to be
+Built for **[Autoreels](docs/CHANNEL.md)**, a Hindi desi stickman comedy with three friends at a chai tapri, and made to be
 re-skinned for your own characters, language and niche.
 
 ![Banner](docs/images/banner.jpg)
@@ -40,8 +40,8 @@ idea  ──►  script  ──►  review  ──►  voices  ──►  animat
 Needs **Python 3.11+** and **FFmpeg** (`winget install Gyan.FFmpeg`, `brew install ffmpeg` or `sudo apt install ffmpeg`).
 
 ```bash
-git clone https://github.com/7absec/tapri-gang-factory.git
-cd tapri-gang-factory
+git clone https://github.com/7absec/Autoreels.git
+cd Autoreels
 pip install -r requirements.txt
 python main.py make --sample
 ```
@@ -100,13 +100,13 @@ Without a key the Edge voices are used, with a different pitch and speed per cha
 ```bash
 powershell -ExecutionPolicy Bypass -File install_autostart.ps1
 ```
-This registers **TapriGangAutopilot** (one round every 30 minutes and at sign-in) and **TapriGangBot** (the Telegram bot).
+This registers **AutoreelsAutopilot** (one round every 30 minutes and at sign-in) and **AutoreelsBot** (the Telegram bot).
 Keep the PC plugged in with sleep off; locking the screen (Win+L) is fine.
 
 **macOS / Linux:** `crontab -e`, then add:
 ```
-*/30 * * * * cd /path/to/tapri-gang-factory && /usr/bin/python3 main.py once >> logs/cron.log 2>&1
-@reboot cd /path/to/tapri-gang-factory && /usr/bin/python3 main.py bot >> logs/bot.log 2>&1
+*/30 * * * * cd /path/to/Autoreels && /usr/bin/python3 main.py once >> logs/cron.log 2>&1
+@reboot cd /path/to/Autoreels && /usr/bin/python3 main.py bot >> logs/bot.log 2>&1
 ```
 
 Each round: posts first comments on videos that went live, retries waiting uploads, makes the community post, replies to comments,
@@ -134,13 +134,13 @@ a short in-character reply that @mentions the viewer. Spam, abuse and politics a
 and comment text is treated as data, never as instructions. `COMMUNITY_REPLIES=hold` drafts instead; `python main.py replies --dry` previews.
 
 ### 8. Claude Code skill (optional)
-`.claude/skills/tapri-gang/` teaches Claude Code the format. Open the folder in Claude Code and say *"write 7 episodes for this week"*.
+`.claude/skills/autoreels/` teaches Claude Code the format. Open the folder in Claude Code and say *"write 7 episodes for this week"*.
 It checks trends with the vidIQ connector, writes episode JSON into `inbox/` and renders them; the autopilot uses `inbox/` first.
 
 ### 9. n8n (optional)
-Import `n8n/tapri_gang_daily.json` into n8n. Run `python main.py api` (port 8770; the first run writes `FACTORY_API_TOKEN`) and expose it
+Import `n8n/autoreels_daily.json` into n8n. Run `python main.py api` (port 8770; the first run writes `FACTORY_API_TOKEN`) and expose it
 with `cloudflared tunnel --url http://127.0.0.1:8770`. Put the address in the workflow's **Config** node, and create the credential
-"Tapri Gang API" (custom auth, header `Authorization: Bearer {{api_key}}`). Use either n8n or the Windows task, not both.
+"Autoreels API" (custom auth, header `Authorization: Bearer {{api_key}}`). Use either n8n or the Windows task, not both.
 
 ## Commands
 
@@ -215,4 +215,4 @@ tests/                  offline tests: python -m unittest discover -s tests -v
 
 ## License
 MIT (see [LICENSE](LICENSE)). Bundled fonts are under their own free licences ([assets/fonts/FONT-LICENSE.txt](assets/fonts/FONT-LICENSE.txt)).
-The Tapri Gang characters and brand are the example channel; make your own.
+The Autoreels characters and brand are the example channel; make your own.

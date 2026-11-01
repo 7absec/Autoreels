@@ -195,7 +195,7 @@ def hook_layer(text: str) -> Image.Image:
 
 def badge_layer() -> Image.Image:
     if "badge" not in _CACHE:
-        name = config.CHANNEL.get("name", "Tapri Gang").upper()
+        name = config.CHANNEL.get("name", "Autoreels").upper()
         f = font(CAP_FONT, 44)
         w = int(f.getlength(name)) + 50
         im = Image.new("RGBA", (w, 70), (0, 0, 0, 0))
@@ -212,7 +212,7 @@ def outro_layer() -> Image.Image:
         d = ImageDraw.Draw(im)
         d.rounded_rectangle((90, 20, 990, 400), radius=40, fill=(178, 44, 44, 240), outline=INK, width=8)
         d.text((W / 2, 130), "SUBSCRIBE KARO!", font=font(CAP_FONT, 110), fill=(255, 214, 0), anchor="mm", stroke_width=8, stroke_fill=INK)
-        d.text((W / 2, 260), config.CHANNEL.get("handle", "@TapriGangComedy"), font=font(CAP_FONT, 80), fill=(255, 255, 255), anchor="mm",
+        d.text((W / 2, 260), config.CHANNEL.get("handle", "@Yourchannel"), font=font(CAP_FONT, 80), fill=(255, 255, 255), anchor="mm",
                stroke_width=6, stroke_fill=INK)
         d.text((W / 2, 345), "chai thandi ho rahi hai...", font=font("PatrickHand.ttf", 50), fill=(255, 255, 255), anchor="mm")
         _CACHE["outro"] = im

@@ -77,7 +77,7 @@ HOOK_SCHEMA = {"type": "object", "properties": {"hooks": {"type": "array", "minI
 
 def write_hooks(ep: dict) -> list:
     lines = "\n".join(f"{l['who']}: {l['caption']}" for l in ep["lines"])
-    system = ("You write YouTube Shorts title hooks for Tapri Gang, a Hindi desi stickman comedy (Pappu, Golu, Chhotu). "
+    system = ("You write YouTube Shorts title hooks for Autoreels, a Hindi desi stickman comedy (Pappu, Golu, Chhotu). "
               "Rules: Hinglish in Roman script, at most 45 characters, include one character name, end with exactly one fitting emoji. "
               "Best patterns: a curiosity question ('Golu ka Lunch Break toot gaya?'), a ridiculous claim ('Pappu ne becha gaddha!'), "
               "a 'X ka Y' twist ('Chhotu ka Diwali Hisaab'). Do not reveal the punchline, no clickbait lies, no hashtags, no ALL CAPS. "
@@ -146,7 +146,7 @@ def description(ep: dict, hook: str, phrase: str) -> str:
     hindi = (KW.get("hindi_tags") or ["कार्टून कॉमेडी"])[0]
     sentences = [x.strip() for x in re.split(r"(?<=[.!?])\s+", ep.get("description", "")) if x.strip()]
     first = f"{hook} {sentences[0] if sentences else ''} {phrase} | {hindi}".replace("  ", " ")
-    tags3 = ["#cartoon", "#comedy", "#TapriGang"]  # the first three hashtags show above the title
+    tags3 = ["#cartoon", "#comedy", "#Autoreels"]  # the first three hashtags show above the title
     more = ["#funnycartoon", "#hindicartoon", "#desicomedy", "#shorts"]
     body = [
         first[:160],
@@ -154,7 +154,7 @@ def description(ep: dict, hook: str, phrase: str) -> str:
         " ".join(sentences[1:]),
         "",
         f"Is episode mein: {', '.join(names)} | Jagah: {playlist or ep['location']}",
-        "Pappu ka jugaad, Golu ki bhookh aur Chhotu ka dimaag: Tapri Gang ki desi stickman comedy, Hindi cartoon kahani har roz.",
+        "Pappu ka jugaad, Golu ki bhookh aur Chhotu ka dimaag: Autoreels ki desi stickman comedy, Hindi cartoon kahani har roz.",
         "",
         (ep.get("comment") or "Comment karo: tumhare group mein Pappu kaun hai?"),
         "",
@@ -179,7 +179,7 @@ def tags(ep: dict, phrase: str) -> list:
         add(t)
     for t in (KW.get("hindi_tags") or [])[:2]:
         add(t)
-    add("tapri gang")
+    add("autoreels")
     for w in dict.fromkeys(l["who"] for l in ep["lines"]):
         add(f"{config.CAST[w]['name']} comedy")
     try:

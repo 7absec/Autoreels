@@ -31,7 +31,7 @@ def logo() -> Path:
               "head": (x, y), "legs": [], "arms": [((x, y + r + 40), (x, y + r + 40), (x, y + r + 40))] * 2}
         draw_character(pen, who, sk, {"pappu": "smug", "golu": "happy", "chhotu": "laugh"}[who], 0.4)
     pen.rrect((90, 560, 710, 700), 30, fill=RED, outline=INK, width=8)
-    pen.text((S / 2, 632), "TAPRI GANG", "Bangers.ttf", 104, fill=YELLOW, stroke=6, stroke_fill=INK)
+    pen.text((S / 2, 632), "AUTOREELS", "Bangers.ttf", 104, fill=YELLOW, stroke=6, stroke_fill=INK)
     im = pen.done()
     mask = Image.new("L", (S, S), 0)
     ImageDraw.Draw(mask).ellipse((0, 0, S - 1, S - 1), fill=255)
@@ -55,7 +55,7 @@ def banner() -> Path:
     im.paste(shade, (0, 0), shade)
     pen = Pen(0, 0, Wb, Hb)
     _trio(pen, 640, 960, 0.80, 165)
-    pen.text((1520, 600), "TAPRI GANG", "Bangers.ttf", 210, fill=YELLOW, stroke=12, stroke_fill=INK)
+    pen.text((1520, 600), "AUTOREELS", "Bangers.ttf", 210, fill=YELLOW, stroke=12, stroke_fill=INK)
     pen.text((1520, 760), config.CHANNEL.get("tagline", ""), "PatrickHand.ttf", 84, fill=RED, stroke=4, stroke_fill=(255, 255, 255))
     pen.rrect((1150, 830, 1890, 920), 30, fill=RED, outline=INK, width=6)
     pen.text((1520, 876), "Roz 3 Shorts: 7 AM | 12 PM | 7 PM", "Bangers.ttf", 58, fill=(255, 255, 255))

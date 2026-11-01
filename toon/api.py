@@ -80,7 +80,7 @@ def do_approve(body: dict) -> dict:
 
 
 class Handler(BaseHTTPRequestHandler):
-    server_version = "TapriGang/1"
+    server_version = "Autoreels/1"
 
     def log_message(self, fmt, *args):
         log.info("%s %s", self.address_string(), fmt % args)
@@ -148,5 +148,5 @@ class Handler(BaseHTTPRequestHandler):
 def serve(port: int = None, host: str = "127.0.0.1"):
     ensure_token()
     port = port or config.API_PORT
-    print(f"Tapri Gang API on http://{host}:{port}  (token in .env as FACTORY_API_TOKEN)")
+    print(f"Autoreels API on http://{host}:{port}  (token in .env as FACTORY_API_TOKEN)")
     ThreadingHTTPServer((host, port), Handler).serve_forever()

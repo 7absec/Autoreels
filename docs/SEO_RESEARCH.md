@@ -1,4 +1,4 @@
-# Tapri Gang SEO research (2026-10-18)
+# Autoreels SEO research (2026-10-18)
 
 Sources: vidIQ keyword research (country IN), YouTube autocomplete (hl=hi, gl=IN), YouTube Data API search of the top 40
 Hindi cartoon comedy Shorts published in the last 60 days (region IN, most viewed; median 6.6M views), vidIQ title scores.
@@ -39,7 +39,7 @@ A short curiosity question with a character name wins; a keyword suffix costs ab
 - **Title:** `<hook ≤45 chars, character name, one emoji> | <keyword phrase> #cartoon`. Claude writes 4 hooks, plain rules rank them,
   vidIQ scores the best 2, the winner is used. The keyword phrase follows the festival or season (Diwali, Holi, exams, cricket, shaadi…) or the location.
 - **Description:** the first ~150 characters hold the hook, the story and the keyword phrase plus a Devanagari keyword. Then the cast and location,
-  the viewer question, the footer, and hashtags with the first three (#cartoon #comedy #TapriGang) shown above the title.
+  the viewer question, the footer, and hashtags with the first three (#cartoon #comedy #Autoreels) shown above the title.
 - **Tags:** the exact target phrase first, then episode tags, core volume tags, two Devanagari tags, the channel name, the characters, and up to a few
   filtered vidIQ suggestions. At most 18 tags, under 480 characters.
 - **Captions:** Hindi (Devanagari) captions with the exact spoken timings are uploaded with every video. Manual captions are indexed for Search.

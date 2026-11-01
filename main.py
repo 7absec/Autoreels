@@ -1,4 +1,4 @@
-"""Tapri Gang factory. Run `python main.py -h` for every command."""
+"""Autoreels factory. Run `python main.py -h` for every command."""
 import argparse
 import json
 import logging
@@ -125,7 +125,7 @@ def cmd_doctor(a):
         nonlocal ok
         ok &= bool(good)
         print(("  OK   " if good else "  FIX  ") + what + ("" if good else f"\n         -> {fix}"))
-    print("Tapri Gang doctor")
+    print("Autoreels doctor")
     line(shutil.which("ffmpeg") and shutil.which("ffprobe"), "FFmpeg on PATH", "winget install Gyan.FFmpeg")
     if config.LLM_PROVIDER == "anthropic":
         line(bool(config.ANTHROPIC_API_KEY), f"Claude key for {config.ANTHROPIC_MODEL}", "set ANTHROPIC_API_KEY in .env")
@@ -181,7 +181,7 @@ def cmd_doctor(a):
 
 
 def main():
-    ap = argparse.ArgumentParser(description="Tapri Gang: desi stickman comedy Shorts, made locally.")
+    ap = argparse.ArgumentParser(description="Autoreels: desi stickman comedy Shorts, made locally.")
     sub = ap.add_subparsers(dest="cmd", required=True)
     m = sub.add_parser("make", help="make one video")
     m.add_argument("idea", nargs="?", help="episode idea (default: next unused one from data/ideas.json)")
