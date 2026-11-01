@@ -2,6 +2,8 @@
 # Run once:  powershell -ExecutionPolicy Bypass -File install_autostart.ps1
 # Remove:    Unregister-ScheduledTask -TaskName "AutoreelsAutopilot" -Confirm:$false
 $root = Split-Path -Parent $MyInvocation.MyCommand.Path
+# Remove the tasks registered under the project's old name so rounds do not run twice
+foreach ($old in @("TapriGangAutopilot", "TapriGangBot")) { Unregister-ScheduledTask -TaskName $old -Confirm:$false -ErrorAction SilentlyContinue }
 $py = (Get-Command pythonw.exe -ErrorAction SilentlyContinue).Source
 if (-not $py) { $py = (Get-Command python.exe).Source }
 $action = New-ScheduledTaskAction -Execute $py -Argument "`"$root\main.py`" once" -WorkingDirectory $root
